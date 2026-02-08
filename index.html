@@ -15,7 +15,6 @@
             --accent-cyan: #00f2ff;
             --text-main: #ffffff;
             --text-dim: #9ba3af;
-            --glow: rgba(0, 242, 255, 0.4);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,7 +36,6 @@
             z-index: -1;
         }
 
-        /* Header Branco conforme solicitado */
         header {
             padding: 10px 5%;
             display: flex;
@@ -57,140 +55,121 @@
             text-decoration: none;
         }
 
-        .brand img {
-            height: 45px;
-            width: auto;
-            border-radius: 4px; /* Suaviza as bordas do ícone */
-        }
+        .brand img { height: 45px; width: auto; }
 
         .brand-text .name {
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-dark);
             display: block;
         }
 
         .brand-text .sub {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #555;
             text-transform: uppercase;
             font-weight: 600;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
+        nav ul { display: flex; list-style: none; gap: 25px; }
         nav a {
             color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            transition: 0.3s;
         }
 
-        nav a:hover { color: var(--accent-cyan); }
-
-        /* Hero Principal */
         .hero {
-            padding: 80px 5% 40px;
+            padding: 60px 5% 30px;
             text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            margin-bottom: 20px;
-            font-weight: 900;
-        }
-
-        .hero h1 span { color: var(--accent-cyan); }
-
-        .tag-telegram {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(0, 242, 255, 0.1);
-            border: 1px solid var(--accent-cyan);
-            border-radius: 50px;
-            color: var(--accent-cyan);
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        /* Seção Sobre movida para baixo do Hero */
-        .about-section {
-            padding: 40px 5%;
             max-width: 900px;
             margin: 0 auto;
         }
 
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3.2rem); /* Fonte levemente reduzida */
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span { color: var(--accent-cyan); }
+
+        .about-section {
+            padding: 20px 5% 40px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
         .about-container {
-            background: rgba(18, 21, 25, 0.8);
+            background: rgba(18, 21, 25, 0.6);
             backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            border-top: 2px solid var(--accent-cyan);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 242, 255, 0.2);
         }
 
         .about-container h2 {
             color: var(--accent-cyan);
             margin-bottom: 15px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .about-container p {
+            font-size: 0.95rem; /* Fonte ajustada */
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            text-align: left;
         }
 
         .btn-cta {
             background: var(--accent-cyan);
             color: #000;
-            padding: 20px 45px;
-            border-radius: 12px;
+            padding: 18px 35px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 900;
+            font-weight: 800;
             display: inline-block;
             transition: 0.3s;
-            box-shadow: 0 8px 25px rgba(0, 242, 255, 0.3);
             text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        .btn-cta:hover { 
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 242, 255, 0.5);
-        }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 242, 255, 0.4); }
 
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 60px 5%;
+            gap: 25px;
+            padding: 40px 5% 80px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        /* Informadores com bordas aprimoradas */
         .card {
-            background: var(--card-dark);
+            background: rgba(18, 21, 25, 0.4);
             padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
         }
+
+        .card:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 242, 255, 0.05);
+        }
+
+        .card h3 { color: var(--accent-cyan); margin-bottom: 12px; font-size: 1.1rem; }
+        .card p { font-size: 0.9rem; color: var(--text-dim); }
 
         .footer-cta {
-            background: #0f1115;
-            padding: 80px 5%;
+            background: #0b0d10;
+            padding: 60px 5%;
             text-align: center;
-            border-top: 1px solid rgba(0, 242, 255, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #000;
-            color: #666;
-            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         @media (max-width: 768px) {
@@ -212,8 +191,8 @@
         </a>
         <nav>
             <ul>
-                <li><a href="#sobre">História</a></li>
-                <li><a href="https://t.me/EduardoMindset_bot">Adquirir Agora</a></li>
+                <li><a href="#sobre">Minha Visão</a></li>
+                <li><a href="https://t.me/EduardoMindset_bot">Adquirir Acesso</a></li>
                 <li><a href="https://t.me/EduardoMindset_bot">Suporte</a></li>
             </ul>
         </nav>
@@ -221,49 +200,44 @@
 
     <main>
         <section class="hero">
-            <div class="tag-telegram">💎 Suporte Premium Ativo</div>
-            <h1>MLVP PRO: O <span>Indicador de Mapeamento</span></h1>
-            <p style="color: var(--text-dim); margin-bottom: 30px;">Identifique a liquidez institucional e valide seus pontos de entrada com tecnologia avançada.</p>
-            <a href="https://t.me/EduardoMindset_bot" class="btn-cta" target="_blank">
-                ADQUIRA JÁ SEU ACESSO
-            </a>
+            <h1>MLVP PRO: Análise <span>Institucional Real</span></h1>
+            <p style="color: var(--text-dim); font-size: 1rem; margin-bottom: 25px;">Tecnologia de mapeamento de liquidez desenvolvida para o trader que busca clareza técnica.</p>
+            <a href="https://t.me/EduardoMindset_bot" class="btn-cta" target="_blank">GARANTIR MINHA LICENÇA</a>
         </section>
 
         <section id="sobre" class="about-section">
             <div class="about-container">
                 <h2>A Mente por trás do Fluxo</h2>
-                <p>Sou Eduardo Mindset, estudo o mercado financeiro há 7 anos e atualmente moro em Portugal. Entre perdas e ganhos, aprendi que o segredo é um setup seguro e paciência operacional.</p>
-                <br>
-                <p>O mercado me permite fazer um salário mínimo português de casa, com poucas horas de tela. Desenvolvi o indicador MLVP PRO para uso pessoal e agora ensino o que me fez virar a chave.</p>
+                <p>Sou Eduardo Palmeira, estudo o mercado financeiro há 7 anos. Atualmente morando em Portugal, minha jornada foi construída com muito estudo e resiliência. Durante muito tempo, frequentei grupos de sinais que apenas geravam ansiedade e sinais falsos, o que me motivou a desenvolver o MLVP PRO.</p>
+                <p>Inicialmente criado para meu uso pessoal, este indicador mudou minha forma de ler o preço. Hoje, disponibilizo essa ferramenta para que outros traders possam encontrar seu próprio setup seguro. Ver a evolução da comunidade me incentiva a continuar aprimorando nossas tecnologias.</p>
+                <p>O indicador aponta os pontos de liquidez cruciais através de IA. O seu papel é ter a paciência necessária para aguardar a confirmação nesses locais. Sem promessas fáceis, apenas análise técnica de alta precisão.</p>
             </div>
         </section>
 
         <section class="features">
             <div class="card">
-                <h3>Validação Profissional</h3>
-                <p>Confirme entradas onde há real interesse das grandes instituições no gráfico diário.</p>
+                <h3>Mapeamento de Força</h3>
+                <p>Identifique onde o dinheiro institucional está realmente posicionado. A IA pré-analisa o cenário para você.</p>
             </div>
             <div class="card">
-                <h3>Foco em BTC e Ouro</h3>
-                <p>Estratégia lapidada para os ativos de maior liquidez e volatilidade controlada.</p>
+                <h3>Fim da Ansiedade</h3>
+                <p>Esqueça o excesso de operações. Opere apenas nas zonas confirmadas e proteja seu capital emocional.</p>
             </div>
-            <div class="card">
-                <h3>Setup Exclusivo</h3>
-                <p>Acesse o método que permite consistência com poucas horas de exposição ao mercado.</p>
+            <div class="card) ">
+                <h3>Consistência Técnica</h3>
+                <p>Acesse um método que prioriza a paciência e o setup individual, fugindo da dependência de salas de sinais.</p>
             </div>
         </section>
 
         <section class="footer-cta">
-            <h2 style="margin-bottom: 20px;">Dúvidas ou Acesso Imediato?</h2>
-            <p style="margin-bottom: 30px;">Fale agora com nossa equipe e garanta sua licença do MLVP PRO.</p>
-            <a href="https://t.me/EduardoMindset_bot" class="btn-cta" target="_blank">
-                FALAR COM SUPORTE
-            </a>
+            <h2 style="margin-bottom: 20px;">Pronto para elevar seu nível?</h2>
+            <p style="margin-bottom: 30px; color: var(--text-dim);">Fale com nossa equipe de suporte e tire suas dúvidas sobre a instalação e uso.</p>
+            <a href="https://t.me/EduardoMindset_bot" class="btn-cta" target="_blank">FALAR COM SUPORTE</a>
         </section>
     </main>
 
-    <footer>
-        &copy; 2026 Eduardo Mindset. Todos os direitos reservados.
+    <footer style="text-align: center; padding: 25px; color: #555; font-size: 0.75rem;">
+        &copy; 2026 Eduardo Mindset. Foco em Consistência e Transparência.
     </footer>
 
 </body>
