@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo Mindset | AI Liquidity Mapping</title>
+    <title>Eduardo Palmeira | MLVP PRO - Mapeamento de Liquidez</title>
     
-    <link rel="icon" type="image/png" href="flatico.png">
+    <link rel="icon" type="image/png" href="logohome.png">
 
     <style>
         :root {
@@ -27,7 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* Background com efeito de Grid */
         .grid-bg {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -42,7 +41,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(6, 7, 9, 0.9);
+            background: rgba(6, 7, 9, 0.95);
             backdrop-filter: blur(15px);
             position: sticky;
             top: 0;
@@ -58,19 +57,24 @@
         }
 
         .brand img {
-            height: 45px; /* Tamanho ajustado para a flatico.png */
+            height: 50px;
             width: auto;
-            filter: drop-shadow(0 0 8px var(--glow));
+            filter: drop-shadow(0 0 10px var(--glow));
         }
 
-        .brand span {
+        .brand-text .name {
             font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #fff;
-            letter-spacing: -0.5px;
+            display: block;
         }
 
-        /* Menu de Navegação Superior */
+        .brand-text .sub {
+            font-size: 0.7rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -81,17 +85,34 @@
             color: var(--text-dim);
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 500;
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: var(--accent-cyan);
+        nav a:hover { color: var(--accent-cyan); }
+
+        /* Seção Sobre */
+        .about-section {
+            padding: 80px 5% 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        /* Hero Section */
+        .about-container {
+            background: linear-gradient(145deg, #121519 0%, #060709 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 4px solid var(--accent-cyan);
+        }
+
+        .about-container h2 {
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* Hero & CTA Principal */
         .hero {
-            padding: 100px 5% 60px;
+            padding: 60px 5%;
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
@@ -99,8 +120,6 @@
 
         .ai-tag {
             display: inline-flex;
-            align-items: center;
-            gap: 8px;
             padding: 6px 16px;
             background: rgba(0, 242, 255, 0.1);
             border: 1px solid var(--accent-cyan);
@@ -108,47 +127,54 @@
             color: var(--accent-cyan);
             font-size: 0.7rem;
             font-weight: 800;
-            margin-bottom: 25px;
-            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 20px;
-            font-weight: 900;
-            line-height: 1.1;
         }
 
-        .hero h1 span {
-            color: var(--accent-cyan);
-            display: block;
-        }
-
-        .hero p {
-            color: var(--text-dim);
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin: 0 auto 40px;
-        }
+        .hero h1 span { color: var(--accent-cyan); }
 
         .btn-cta {
             background: var(--accent-cyan);
             color: #000;
-            padding: 18px 40px;
-            border-radius: 10px;
+            padding: 20px 45px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 900;
             display: inline-block;
             transition: 0.3s;
             box-shadow: 0 8px 25px rgba(0, 242, 255, 0.3);
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 242, 255, 0.5);
+        .btn-cta:hover { 
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 242, 255, 0.5);
         }
 
-        /* Grid de Cards */
+        /* Seção Final de Conversão */
+        .footer-cta {
+            background: #0f1115;
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(0, 242, 255, 0.1);
+        }
+
+        .footer-cta h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .footer-cta p {
+            color: var(--text-dim);
+            margin-bottom: 30px;
+        }
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -160,40 +186,20 @@
 
         .card {
             background: var(--card-dark);
-            padding: 35px;
+            padding: 30px;
             border-radius: 15px;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.4s;
-        }
-
-        .card:hover {
-            border-color: var(--accent-cyan);
-            background: #181c22;
-        }
-
-        .card h3 {
-            color: var(--accent-cyan);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .card p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 30px;
             color: #444;
             font-size: 0.8rem;
         }
 
-        /* Responsividade para o Menu */
         @media (max-width: 768px) {
-            nav { display: none; } /* Aqui poderíamos adicionar o menu sandwich depois */
-            .hero { padding-top: 60px; }
+            nav { display: none; }
         }
     </style>
 </head>
@@ -203,48 +209,65 @@
 
     <header>
         <a href="#" class="brand">
-            <img src="flatico.png" alt="Eduardo Mindset Logo">
-            <span>Eduardo Mindset</span>
+            <img src="logohome.png" alt="Eduardo Palmeira Logo">
+            <div class="brand-text">
+                <span class="name">Eduardo Palmeira</span>
+                <span class="sub">Mapeamento de Liquidez</span>
+            </div>
         </a>
         <nav>
             <ul>
-                <li><a href="#">O Método</a></li>
-                <li><a href="#">Algoritmo IA</a></li>
-                <li><a href="#">Planos</a></li>
-                <li><a href="https://t.me/epalmeiracall_bot" target="_blank">Suporte</a></li>
+                <li><a href="#sobre">História</a></li>
+                <li><a href="https://t.me/EduardoMindset_bot">Acesso PRO</a></li>
+                <li><a href="https://t.me/EduardoMindset_bot">Suporte</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section id="sobre" class="about-section">
+            <div class="about-container">
+                <h2>A Mente por trás do Fluxo</h2>
+                <p>Sou Eduardo Palmeira, estudo o mercado financeiro há 7 anos e atualmente moro em Portugal. Entre perdas e ganhos, aprendi que o segredo é um setup seguro e paciência operacional.</p>
+                <p>O mercado me permite fazer um salário mínimo português de casa, com poucas horas de tela. Desenvolvi o indicador MLVP PRO para uso pessoal e agora ensino o que me fez virar a chave.</p>
+            </div>
+        </section>
+
         <section class="hero">
-            <div class="ai-tag">📡 Tecnologia de IA em Tempo Real</div>
-            <h1>Mapeamento de <span>Liquidez Institucional</span></h1>
-            <p>O rastro do dinheiro institucional revelado por inteligência artificial. Identifique pontos cruciais de análise gráfica diária sem ruídos.</p>
-            
-            <a href="https://t.me/epalmeiracall_bot" class="btn-cta" target="_blank">
-                ACESSAR INDICADOR @EPALMEIRACALL_BOT
+            <div class="ai-tag">📡 CONECTADO AO @EduardoMindset_bot</div>
+            <h1>MLVP PRO: O <span>Indicador de Mapeamento</span> Definitivo</h1>
+            <p>Rastreie o dinheiro institucional com precisão cirúrgica no BTC e Ouro.</p>
+            <a href="https://t.me/EduardoMindset_bot" class="btn-cta" target="_blank">
+                COMEÇAR AGORA NO TELEGRAM
             </a>
         </section>
 
         <section class="features">
             <div class="card">
-                <h3>Monitoramento 24/7</h3>
-                <p>Nossa IA monitora o fluxo de ordens global, identificando onde a liquidez real está sendo injetada em tempo real.</p>
+                <h3>Validação de Preço</h3>
+                <p>Confirme entradas apenas onde há real interesse institucional e liquidez confirmada.</p>
             </div>
             <div class="card">
-                <h3>Pontos de Reversão</h3>
-                <p>Pare de operar rompimentos falsos. Saiba exatamente onde as baleias estão capturando liquidez antes da reversão.</p>
+                <h3>Sinais Sem Ruído</h3>
+                <p>Limpeza gráfica total para que você foque apenas nos pontos de alta probabilidade diária.</p>
             </div>
             <div class="card">
-                <h3>Simplicidade Técnica</h3>
-                <p>Transformamos dados complexos de fluxo em sinais visuais claros no seu gráfico diário de BTC e Ouro.</p>
+                <h3>Lives e Comunidade</h3>
+                <p>Acompanhe minhas análises ao vivo e veja a aplicação prática do método MLVP PRO.</p>
             </div>
+        </section>
+
+        <section class="footer-cta">
+            <h2>Pronto para virar a chave?</h2>
+            <p>Junte-se a centenas de traders que já operam com a vantagem da liquidez mapeada.</p>
+            <a href="https://t.me/EduardoMindset_bot" class="btn-cta" target="_blank">
+                FALAR COM O @EduardoMindset_bot
+            </a>
         </section>
     </main>
 
     <footer>
-        &copy; 2026 Eduardo Mindset - Todos os direitos reservados.
+        &copy; 2026 Eduardo Palmeira. Desenvolvido para Traders Profissionais.
     </footer>
 
 </body>
